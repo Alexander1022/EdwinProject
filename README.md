@@ -1,20 +1,16 @@
-# Elfrieda
+# Edwin
 
-Elfrieda Project is a Python virtual assistant on RaspberryPi
+Edwin Project is a Python virtual assistant on RaspberryPi
 
 ## Installation
 
 ```bash
-git clone https://github.com/Alexander1022/ElfriedaProject.git
-cd ElfriedaProject
+i will add it later
 ```
 
 ## Usage
 
 I will update it later.
-
-## Contributing
-**Contributing is closed for now.**
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
