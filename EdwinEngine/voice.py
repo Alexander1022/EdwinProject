@@ -14,3 +14,4 @@ def speech_recognition():
             said_by_user = ""
 
     return said_by_user.lower()
+
