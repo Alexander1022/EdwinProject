@@ -29,6 +29,7 @@ python3 main.py
 
 ## Използвани технологии
 [Python](https://www.python.org/)
+
 [Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
 
 ## Информация за авторите на проекта
