@@ -1,6 +1,6 @@
 # Edwin :zap:
 
-![Edwin's Logo] (./EdwinLogo.png)
+![Edwin's Logo] (/EdwinLogo.png)
 
 Edwin е Виртуален Асистент написан на Python и работещ на Raspberry Pi. 
 
