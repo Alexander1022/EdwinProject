@@ -1,18 +1,35 @@
-# Edwin
+# Edwin :zap:
 
-Edwin Project is a Python virtual assistant on RaspberryPi
+![Edwin's Logo] (./EdwinLogo.png)
 
-## Installation
+Edwin е Виртуален Асистент написан на Python и работещ на Raspberry Pi. 
+
+## Как да си сваля и използвам проекта?
+
+:heavy_exclamation_mark: Проектът е предназначен да работи само на Linux + Raspberry Pi :heavy_exclamation_mark:
+
+Едвин е разработван на Rasperry Pi 3B+ модела и операционна система Raspberry Pi OS.
+
+### Инструкции за сваляне
 
 ```bash
-i will add it later
+git clone https://github.com/Alexander1022/EdwinProject.git
 ```
 
-## Usage
+### Инструкции за инсталация
 
-I will update it later.
+```bash
+cd EdwinProject/EdwinEngine/
+```
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+### Инструкции за стартиране на проекта
+```bash
+python3 main.py
+```
 
-Please make sure to credit me if you use my project.
+## Използвани технологии
+[Python] (https://www.python.org/)
+[Raspberry Pi 3B+] (https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
+
+## Информация за авторите на проекта
+Александър Йорданов - програмист, дизайнер, хардуерист (всичко) - [Alexander1022] (https://github.com/Alexander1022)
