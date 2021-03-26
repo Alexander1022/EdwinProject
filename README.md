@@ -1,6 +1,6 @@
 # Edwin :zap:
 
-![Edwin's Logo] (/EdwinLogo.png)
+![Edwin's Logo](/EdwinLogo.png)
 
 Edwin е Виртуален Асистент написан на Python и работещ на Raspberry Pi. 
 
@@ -28,8 +28,8 @@ python3 main.py
 ```
 
 ## Използвани технологии
-[Python] (https://www.python.org/)
-[Raspberry Pi 3B+] (https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
+[Python](https://www.python.org/)
+[Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
 
 ## Информация за авторите на проекта
-Александър Йорданов - програмист, дизайнер, хардуерист (всичко) - [Alexander1022] (https://github.com/Alexander1022)
+Александър Йорданов - програмист, дизайнер, хардуерист (всичко) - [Alexander1022](https://github.com/Alexander1022)
