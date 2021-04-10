@@ -5,7 +5,9 @@ import led_indicators
 import random
 import conversations
 import wikipedia_check
-
+import alarm
+import schedule
+from pynotifier import Notification
 
 def read_input(speech_input):
     def if_match(cons):
@@ -24,8 +26,19 @@ def read_input(speech_input):
     elif if_match(["здрасти"]):
         conversations.hello_rep()
         
+    elif if_match(["мерси"]) or if_match(["благодаря"]):
+        conversations.thanks()
+        
     elif if_match(["какво", "е"]):
        wikipedia_check.search_in_wiki(speech_input)
+       
+    elif if_match(["колко", "е", "температурата"]):
+        conversations.temperature()
+        
+    elif if_match(['направи', 'аларма', 'за']):
+        print("Това е демо за аларма.")
+        talk("Това е демо за аларма.")
+        alarm.alarm()
          
     else:
         conversations.problem()
@@ -33,13 +46,17 @@ def read_input(speech_input):
     
 
 def main():
-    speech_input = speech_recognition()
-    print("Ти каза : " + speech_input)
-    read_input(speech_input)
+    Notification(
+	title='Edwin',
+	description='Едвин стартира',
+	duration=5,                          
+	urgency='normal'
+    ).send()
+    while True:
+        speech_input = speech_recognition()
+        print("Ти каза : " + speech_input)
+        read_input(speech_input)
     
 if __name__ == "__main__":
     main()
      
-
-#print("А, да не забравя температурата е " + read_temp() + " градуса")
-#talk("А, да не забравя температурата е " + read_temp() + " градуса")

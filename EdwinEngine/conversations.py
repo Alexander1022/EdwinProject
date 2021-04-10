@@ -1,5 +1,6 @@
 from bg_tts import talk
 import random
+import temp
 
 def hello_rep():
     hello = ["Здрасти!", "Хей, радвам се да те чуя!"]
@@ -13,8 +14,19 @@ def introduction():
     print(c)
     talk(c)
     
+def thanks():
+    thanks_answers = ["Винаги съм тук.", "Няма защо.", "Винаги съм до теб."]
+    c = random.choice(thanks_answers)
+    print(c)
+    talk(c)
+    
 def problem():
     problem = ["Не разбрах това!", "Не знам какво да кажа, не разбрах!", "Стана проблем!"]
     c = random.choice(problem)
     print(c)
     talk(c)
+    
+def temperature():
+    print("Температурата е: " + temp.read_temp() + " градуса")
+    talk("Температурата е" + temp.read_temp() + " градуса")
+    
