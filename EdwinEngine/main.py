@@ -7,6 +7,7 @@ import conversations
 import wikipedia_check
 import alarm
 import schedule
+import weather
 from pynotifier import Notification
 
 def read_input(speech_input):
@@ -31,9 +32,15 @@ def read_input(speech_input):
         
     elif if_match(["какво", "е"]):
        wikipedia_check.search_in_wiki(speech_input)
+
+    elif if_match(["какво", "можеш", "да", "правиш"]):
+        conversations.i_can()
        
     elif if_match(["колко", "е", "температурата"]):
         conversations.temperature()
+
+    elif if_match(["колко", "е", "температурата", "в"]):
+        weather.give_me_the_weather(speech_input)
         
     elif if_match(['направи', 'аларма', 'за']):
         print("Това е демо за аларма.")
