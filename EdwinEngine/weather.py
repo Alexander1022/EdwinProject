@@ -1,11 +1,14 @@
 import requests, json
+from bg_tts import talk
+
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 API_KEY = "fbb0126317878e1dd873d7d0326efb6d"
 
 def give_me_the_weather(speech_input):
     string = speech_input.split()
-    string.remove('колко')
-    string.remove('е')
+    if 'кажи' in string:
+        string.remove('кажи')
+        
     string.remove('температурата')
     string.remove('в')
     location = ' '.join(string)
@@ -20,7 +23,8 @@ def give_me_the_weather(speech_input):
 
         cels = round(temperature - 273.15)
 
-        print(cels)
+        print("Температурата в " + location + " е " + str(cels) + "градуса")
+        talk("Температурата в " + location + " е " + str(cels) + "градуса")
 
     else:
         print("Error in HTTP request")
