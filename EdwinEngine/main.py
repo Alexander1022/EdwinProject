@@ -10,6 +10,7 @@ import schedule
 import weather
 import sys
 import music
+import youtube_music
 from pynotifier import Notification
 
 def read_input(speech_input):
@@ -43,6 +44,12 @@ def read_input(speech_input):
 
     elif if_match(["кажи", "температурата", "в"]) or if_match(["температурата", "в"]):
         weather.give_me_the_weather(speech_input)
+        
+    elif if_match(["дай", "прогнозата", "за"]):
+        weather.give_me_the_weather(speech_input)
+        
+    elif if_match(["музика", "ютуб"]):
+        youtube_music.play()
         
     elif if_match(['направи', 'аларма', 'за']):
         print("Това е демо за аларма.")
