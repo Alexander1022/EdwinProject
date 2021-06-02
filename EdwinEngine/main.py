@@ -1,7 +1,6 @@
 from bg_tts import talk
 from voice import speech_recognition
 from temp import read_temp
-import led_indicators
 import random
 import conversations
 import wikipedia_check
@@ -11,7 +10,13 @@ import weather
 import sys
 import music
 import youtube_music
+from RPLCD import CharLCD
+import RPi.GPIO as GPIO
+from LCD import writeOnLCD
 from pynotifier import Notification
+import time
+
+lcd = CharLCD(cols=16, rows=2, pin_rs=37, pin_e=35, pins_data=[40, 38, 36, 32, 33, 31, 29, 23], numbering_mode=GPIO.BOARD, auto_linebreaks=True)
 
 def read_input(speech_input):
     def if_match(cons):
@@ -34,8 +39,10 @@ def read_input(speech_input):
         conversations.thanks()
         
     elif if_match(["какво", "е"]):
-       wikipedia_check.search_in_wiki(speech_input)
-
+        writeOnLCD("Wikipedia")
+        wikipedia_check.search_in_wiki(speech_input)
+       
+    
     elif if_match(["какво", "можеш", "да", "правиш"]):
         conversations.i_can()
        
@@ -49,6 +56,7 @@ def read_input(speech_input):
         weather.give_me_the_weather(speech_input)
         
     elif if_match(["музика", "ютуб"]):
+        writeOnLCD("Playing music from YT")
         youtube_music.play()
         
     elif if_match(['направи', 'аларма', 'за']):
@@ -58,6 +66,7 @@ def read_input(speech_input):
         
     elif if_match(["пусни", "музика"]):
         print("Търся песни!")
+        writeOnLCD("Music () ) )")
         talk("Търся песни!")
         music.player(".")
         
@@ -66,24 +75,40 @@ def read_input(speech_input):
         sys.exit()
          
     else:
-        led_indicators.problem()
+        writeOnLCD(":(")
         conversations.problem()
+        
+    lcd.clear()
         
     
 
 def main():
-    led_indicators.startup()
+    writeOnLCD("Edwin Project")
+    lcd.cursor_pos = (1, 0)
+    writeOnLCD("ELSYS @ 2021")
+    time.sleep(5)
+    
     Notification(
 	title='Edwin',
 	description='Едвин стартира',
 	duration=5,                          
 	urgency='normal'
     ).send()
+    
+    lcd.clear()
     while True:
-        led_indicators.success()
-        speech_input = speech_recognition()
-        print("Ти каза : " + speech_input)
-        read_input(speech_input)
+        try:
+            writeOnLCD("Edwin is waiting.")
+            speech_input = speech_recognition()
+            print("Ти каза : " + speech_input)
+            lcd.clear()
+            read_input(speech_input)
+            
+        except KeyboardInterrupt:
+            writeOnLCD("Bye Bye!")
+            time.sleep(2)
+            lcd.clear()
+            sys.exit()
     
 if __name__ == "__main__":
     main()
