@@ -2,7 +2,7 @@
 
 ![Edwin's Logo](/EdwinLogo.png)
 
-Edwin е Виртуален Асистент написан на Python и работещ на Raspberry Pi. 
+Edwin е Виртуален Асистент написан на Python и работещ на Raspberry Pi.
 
 ## Как да си сваля и използвам проекта?
 
@@ -33,4 +33,6 @@ python3 main.py
 [Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
 
 ## Информация за авторите на проекта
+Росен Витанов - преподавател по ВМКС в ТУЕС
+
 Александър Йорданов - програмист, дизайнер, хардуерист (всичко) - [Alexander1022](https://github.com/Alexander1022)
